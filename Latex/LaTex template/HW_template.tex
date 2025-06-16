@@ -1,0 +1,50 @@
+\documentclass[a4paper,12pt,fleqn]{article}
+
+% بسته‌های مورد نیاز
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{xepersian}
+
+% تنظیمات قلم
+\settextfont[Path=./Fonts/, BoldFont=XBZarBd.ttf, ItalicFont=XBZarIt.ttf]{XBZar.ttf}
+
+% تنظیمات صفحه
+\geometry{top=1.8cm, bottom=2.5cm, left=2cm, right=2cm}
+\linespread{1.5}
+
+% اطلاعات سربرگ
+\newcommand{\homeworkTitle}{عنوان تمرین }
+\newcommand{\studentName}{نام دانشجو}
+\newcommand{\studentID}{شماره دانشجویی}
+
+% تنظیمات سربرگ
+\pagestyle{plain}
+\fancypagestyle{firstpageheader}{
+    \fancyhf{}
+    \fancyhead[L]{
+        \includegraphics[width=2.5cm]{iut_logo.png}\\[0.2cm]
+    }
+    \fancyhead[R]{
+        \begin{tabular}{@{}r@{}}
+            \textbf{عنوان تمرین:} \homeworkTitle \\[0.2cm]
+            \textbf{نام دانشجو:} \studentName \\[0.1cm]
+            \textbf{شماره دانشجویی:} \studentID\\[0.2cm]
+        \end{tabular}
+    }
+    \renewcommand{\headrulewidth}{0.8pt}
+}
+
+\begin{document}
+
+% صفحه اول با سربرگ
+\thispagestyle{firstpageheader}
+\vspace*{2cm}
+
+\end{document}

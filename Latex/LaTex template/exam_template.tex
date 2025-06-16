@@ -1,0 +1,71 @@
+\documentclass[a4paper,12pt,fleqn]{article}
+
+% بسته‌های مورد نیاز
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{xepersian}
+\usepackage{fontspec}
+
+% تنظیمات قلم
+\settextfont[Path=./Fonts/, BoldFont=XBZarBd.ttf, ItalicFont=XBZarIt.ttf]{XBZar.ttf}
+
+% تنظیمات صفحه
+\geometry{top=1.8cm, bottom=2.5cm, left=2cm, right=2cm}
+\linespread{1.5}
+
+% اطلاعات سربرگ
+
+\newcommand{\examName}{چه امتحانی؟(مثال: امتحان پایان ترم)}
+\newcommand{\courseName}{ نام درس را در اینجا بنویسید}
+\newcommand{\courseTeacher}{نام استاد را در اینجا بنویسید}
+\newcommand{\examDate}{تاریخ امتحان را در اینجا بنویسید}
+\newcommand{\facultyName}{دانشکده مهندسی برق و کامپیوتر}
+\newcommand{\universityName}{دانشگاه صنعتی اصفهان}
+
+% تنظیمات سربرگ
+\setlength{\headheight}{150pt}
+\fancypagestyle{examheader}{
+    \fancyhf{}
+    \fancyhead[C]{
+        \vspace{0.1cm}
+        \includegraphics[width=2.5cm]{iut_logo.png}\\[0.2cm]
+        \textbf{\facultyName} \\[0.1cm]
+        \textbf{\universityName} \\[0.3cm]
+    }
+    \fancyhead[L]{
+        \vspace{0.1cm}
+        \begin{tabular}{@{}l@{}}
+            \textbf{\examName} \\[0.1cm]
+            \textbf{تاریخ:} \examDate \\[0.1cm]
+        \end{tabular}
+    }
+    \fancyhead[R]{
+        \vspace{0.1cm}
+        \begin{tabular}{@{}r@{}}
+            \textbf{نام استاد:} \courseTeacher \\[0.2cm]
+            \textbf{نام درس:} \courseName
+        \end{tabular}
+    }
+    \renewcommand{\headrulewidth}{0.8pt}
+}
+
+
+\begin{document}
+
+% صفحه اول با سربرگ
+\thispagestyle{examheader}
+
+
+\vspace*{3.5cm}
+
+\begin{enumerate}
+    \item {سوال اول امتحان}
+    \item {سوال دوم امتحان}
+          % دیگر سوالات را نیز به همین فرمت وارد نمایید
+\end{enumerate}
+
+\end{document}
