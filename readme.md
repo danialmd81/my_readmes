@@ -15,6 +15,10 @@ This repository serves as a personal knowledge base where I gather various READM
 - **Google C++ Style Guide** - Reference for C++ coding standards
 - **Nekobox** - Network routing configuration
 
+## TODO
+
+[] add a Zinit readme
+
 ## Usage
 
 Each directory contains specific documentation and setup instructions. Navigate to the relevant folder to find detailed information about a particular topic.

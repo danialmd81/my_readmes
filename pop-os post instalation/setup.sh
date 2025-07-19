@@ -64,12 +64,12 @@ curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/t
 	./msfinstall
 echo "Metasploit installed successfully!"
 
-# Install v2rayN
-echo "Installing v2rayN..."
-wget -O v2rayn.deb https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-linux-64.deb
-sudo apt install ./v2rayn.deb -y
-rm v2rayn.deb
-echo "v2rayN installed successfully!"
+# # Install v2rayN
+# echo "Installing v2rayN..."
+# wget -O v2rayn.deb https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-linux-64.deb
+# sudo apt install ./v2rayn.deb -y
+# rm v2rayn.deb
+# echo "v2rayN installed successfully!"
 
 # Install NVIDIA drivers
 echo "Installing NVIDIA drivers..."
@@ -147,11 +147,11 @@ echo "Installing R..."
 sudo apt install -y r-base
 echo "R installed successfully!"
 
-# Install Rust
-echo "Installing Rust..."
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-source $HOME/.cargo/env
-echo "Rust installed successfully!"
+# # Install Rust
+# echo "Installing Rust..."
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+# source $HOME/.cargo/env
+# echo "Rust installed successfully!"
 
 # Install Go
 echo "Installing Go..."
@@ -242,10 +242,11 @@ sudo apt install -y git-lfs
 git lfs install
 echo "Git LFS installed and initialized successfully!"
 
-# Install Elisa Music Player
-echo "Installing Elisa Music Player..."
-sudo apt install -y elisa
-echo "Elisa Music Player installed successfully!"
+#TODO change to audocious
+# # Install Elisa Music Player
+# echo "Installing Elisa Music Player..."
+# sudo apt install -y elisa
+# echo "Elisa Music Player installed successfully!"
 
 # Install gThumb, GIMP, and Pinta
 echo "Installing gThumb, GIMP, and Pinta..."
@@ -276,8 +277,6 @@ chsh -s $(which zsh)
 
 echo "Log out and log back in to apply the default shell change."
 
-echo "Installing Oh My Zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Final message
 echo "All applications have been installed and set up successfully!"
