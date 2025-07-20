@@ -117,32 +117,6 @@ geosite:category-tech-ir
 geosite:category-travel-ir
 ```
 
-- `Proxy, Domain`
-
-```
-geosite:apple
-geosite:adobe
-geosite:anthropic
-geosite:openai
-geosite:clubhouse
-geosite:netflix
-geosite:nvidia
-geosite:intel
-geosite:amd
-geosite:signal
-geosite:soundcloud
-geosite:youtube
-geosite:telegram
-geosite:twitter
-geosite:instagram
-geosite:facebook
-geosite:pinterest
-geosite:tiktok
-geosite:spotify
-geosite:twitch
-geosite:discord
-```
-
 - `Block, Domain`
 
 ```
