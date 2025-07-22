@@ -104,7 +104,7 @@ UUID=d431b8e1-7124-493f-99f2-c8fa9c1fb88f /home ext4 noatime,errors=remount-ro 0
 PARTUUID=2fb146a3-58ce-4702-a449-f0047e3e154a /boot/efi vfat umask=0077 0 0
 PARTUUID=0c1d37e0-98ba-4985-bc47-753386ff0601 /recovery vfat umask=0077 0 0
 UUID=948c2c5a-ea23-44b5-855a-f63354031a68 / ext4 noatime,errors=remount-ro 0 1
-UUID=0F372DA92161ECCA /mnt/F ntfs-3g defaults,nofail,windows_names,uid=1000,gid=1000,exec,fmask=007,dmask=007,x-gvfs-show 0 0
-UUID=E01AD08A1AD05F5A /mnt/E ntfs-3g defaults,nofail,windows_names,uid=1000,gid=1000,exec,fmask=007,dmask=007,x-gvfs-show 0 0
-UUID=60FA300AFA2FDB54 /mnt/D ntfs-3g defaults,nofail,windows_names,uid=1000,gid=1000,exec,fmask=007,dmask=007,x-gvfs-show 0 0
+UUID=0F372DA92161ECCA /mnt/F ntfs-3g defaults,nofail,uid=1000,gid=1000,windows_names,x-gvfs-show 0 0
+UUID=E01AD08A1AD05F5A /mnt/E ntfs-3g defaults,nofail,uid=1000,gid=1000,windows_names,x-gvfs-show 0 0
+UUID=60FA300AFA2FDB54 /mnt/D ntfs-3g defaults,nofail,uid=1000,gid=1000,windows_names,x-gvfs-show 0 0
 ```
