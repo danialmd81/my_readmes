@@ -37,6 +37,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 ### End of Zinit's installer chunk
 
+# compinit
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
@@ -77,17 +78,44 @@ zinit snippet OMZP::ssh
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
 
-# Load fzf shell integration scripts
 # Key bindings:
 # - Ctrl+T to paste selected files/directories onto the command line
 # - Ctrl+R for interactive history search
 # - Alt+C to cd into selected directory
+# Load fzf shell integration scripts
 zinit ice has"fzf" id-as"junegunn/fzf_completions" pick"/dev/null" multisrc"shell/completion.zsh shell/key-bindings.zsh"
 zinit light junegunn/fzf
 
 # Ctrl + Arrow keys for moving the cursor by words
 bindkey '\e[1;5C' forward-word      # Ctrl+Right
 bindkey '\e[1;5D' backward-word     # Ctrl+Left
+
+# Compilation flags
+export ARCHFLAGS="-arch $(uname -m)"
+
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+ 
+# General Aliases
+alias _='sudo '
+alias g=git
+alias l='ls -lah'
+alias la='ls -lAh'
+alias ll='ls -lh'
+alias ls='ls --color=tty'
+alias lsa='ls -lah'
+alias md='mkdir -p'
+alias rd=rmdir
+alias which-command=whence
+
+alias cls="clear"
+alias r="radian"
+
+alias find-cmake="find . -name 'CMakeLists.txt' -exec dirname {} \; | xargs -I{} readlink -f {} | jq -R . | jq -s '{ \"cmake.sourceDirectory\": . }'"
 
 # Load your custom plugins
 source $HOME/.zsh/custom/update-man-completion.zsh
@@ -112,9 +140,6 @@ else
   export EDITOR='code'
 fi
 
-# Compilation flags
-export ARCHFLAGS="-arch $(uname -m)"
-
 # Initialize rbenv
 eval "$(rbenv init -)"
 
@@ -133,26 +158,7 @@ export ANDROIDAPI="31"  # Target API version of your application
 export NDKAPI="21"  # Minimum supported API version of your application
 export ANDROIDNDKVER="25b"  # Version of the NDK you installed
 
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
- 
-
-# Aliases
-alias _='sudo '
-alias g=git
-alias l='ls -lah'
-alias la='ls -lAh'
-alias ll='ls -lh'
-alias ls='ls --color=tty'
-alias lsa='ls -lah'
-alias md='mkdir -p'
-alias rd=rmdir
-alias which-command=whence
-
+# My Aliases
 alias zshconfig="code ~/.zshrc"
 
 alias update="sudo apt update"
@@ -166,14 +172,10 @@ alias autoclean="sudo apt autoclean"
 alias autopurge="sudo apt autopurge"
 alias search="apt search"
 
-alias cls="clear"
-alias r="radian"
-
 alias qt-cmake="/home/danial/Qt/Tools/CMake/bin/cmake"
 alias qt-cmake-gui="/home/danial/Qt/Tools/CMake/bin/cmake-gui"
 alias qt6-qmake="/home/danial/Qt/6.9.0/gcc_64/bin/qmake"
 alias qt5-qmake="/home/danial/Qt/5.15.2/gcc_64/bin/qmake"
-
 
 alias graphics="system76-power graphics"
 alias graphics-hybrid="sudo system76-power graphics hybrid"
@@ -184,5 +186,3 @@ alias profile="system76-power profile"
 alias profile-battery="system76-power profile battery"
 alias profile-balanced="system76-power profile balanced"
 alias profile-performance="system76-power profile performance"
-
-alias find-cmake="find . -name 'CMakeLists.txt' -exec dirname {} \; | xargs -I{} readlink -f {} | jq -R . | jq -s '{ \"cmake.sourceDirectory\": . }'"
