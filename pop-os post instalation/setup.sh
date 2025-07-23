@@ -178,6 +178,9 @@ sudo apt install -y handbrake mkvtoolnix mkvtoolnix-gui
 # Install LaTex
 sudo apt install -y texlive texlive-xetex texlive-lang-arabic texlive-base texlive-extra-utils perl-tk ttf-mscorefonts-installer
 
+# Install FanNotifications.sh
+sudo apt install -y inotify-tools dunst
+
 # Fixing the System Clock
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 timedatectl
