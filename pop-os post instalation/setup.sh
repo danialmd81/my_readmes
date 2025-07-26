@@ -26,6 +26,9 @@ rm chrome.deb
 sudo apt install python3-nautilus
 wget -qO- https://raw.githubusercontent.com/harry-cpp/code-nautilus/master/install.sh | bash
 
+# Install open as Admin
+sudo apt install nautilus-admin
+
 # Install Python
 sudo apt install -y python3 python3-pip
 
