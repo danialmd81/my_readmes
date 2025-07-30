@@ -190,7 +190,7 @@ timedatectl
 
 # Install and set up Zsh as the default shell
 sudo apt install -y zsh
-cp -r ./zsh ~/
 chsh -s $(which zsh)
+cp -r ./zsh ~/
 
 # Final message
