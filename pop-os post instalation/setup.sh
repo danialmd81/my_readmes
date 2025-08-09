@@ -73,11 +73,11 @@ sudo systemctl start mssql-server
 sudo apt-get update
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL "https://repo.mecan.ir/repository/debian-docker/gpg" 
+sudo curl -fsSL "https://repo.mecan.ir/repository/debian-docker/gpg"
 sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
 chmod a+r /etc/apt/keyrings/docker.gpg
 # Add the repository to Apt sources:
-echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://repo.mecan.ir/repository/debian-docker bookworm stable" > /etc/apt/sources.list.d/docker.list
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://repo.mecan.ir/repository/debian-docker bookworm stable" >/etc/apt/sources.list.d/docker.list
 cat /etc/apt/sources.list.d/docker.list
 sudo apt-get update
 # Install Docker Engine, CLI, and Containerd
@@ -90,7 +90,7 @@ newgrp docker
 # check docker config directory
 [[ -d /etc/docker ]] || mkdir /etc/docker
 
-cat <<EOF > /etc/docker/daemon.json
+cat <<EOF >/etc/docker/daemon.json
 
 {
 	"data-root": "/home/danial/docker",
@@ -111,7 +111,7 @@ git config --global init.defaultBranch main
 sudo apt install gnome-usage
 
 # Install GNOME Extensions
-gext install 517 240 945 36 6003 1634 906
+gext install 517 240 945 36 6003 1634 906 779	
 
 # Install R
 sudo apt install -y r-base
