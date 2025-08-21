@@ -92,7 +92,8 @@ newgrp docker
 cat <<EOF >/etc/docker/daemon.json
 
 {
-  "registry-mirrors": ["https://hub.mecan.ir","https://hub.hamdocker.ir"]
+	"insecure-registries": ["https://docker.arvancloud.ir"],
+	"registry-mirrors": ["https://docker.arvancloud.ir"]
 }
 EOF
 # restart docker service
