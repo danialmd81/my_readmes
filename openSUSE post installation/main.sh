@@ -143,3 +143,6 @@ wget -O telegram.tar.xz https://telegram.org/dl/desktop/linux
 tar -xf telegram.tar.xz -C /opt/
 ln -sf /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
 rm telegram.tar.r
+
+udo zypper in python3-nautilus
+wget -qO- https://raw.githubusercozntent.com/harry-cpp/code-nautilus/master/install.sh | bash
