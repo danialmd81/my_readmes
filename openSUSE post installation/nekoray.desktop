@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=nekoray
+Comment=Qt based cross-platform GUI proxy configuration manager (backend: sing-box)
+Icon=/home/danial/bin/nekoray/nekobox.png
+Exec=/home/danial/bin/nekoray/nekobox
+Actions=
+Categories=Application;Network;

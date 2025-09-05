@@ -12,9 +12,12 @@ zypper refresh && zypper update -y
 # rm packages.microsoft.gpg
 
 #### Install NekoRay
-# wget -O nekoray.rpm https://github.com/MatsuriDayo/nekoray/releases/latest/download/nekoray-linux-x64.rpm
-# zypper install -y ./nekoray.rpm
-# rm nekoray.rpm
+wget -O nekoray.zip https://github.com/MatsuriDayo/nekoray/releases/latest/download/nekoray-4.0.1-2024-12-12-linux64.zip
+unzip nekoray.zip -d /home/danial/bin/
+rm nekoray.zip
+zypper install libcap-progs
+setcap cap_net_admin,cap_net_bind_service=+ep /home/danial/bin/nekoray/nekobox_core
+cp ./nekoray.desktop /usr/share/applications/
 
 #### Install Google Chrome
 # wget -O chrome.rpm https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
@@ -107,6 +110,7 @@ zypper install -y audacious
 ###### Install uGet
 # zypper install -y uget
 
+# TODO
 ## Install OBS Studio
 zypper install -y obs-studio
 
@@ -121,10 +125,8 @@ git lfs install
 zypper install -y gthumb gimp pinta
 
 ## Install HandBrake and MKVToolNix
-zypper install -y handbrake mkvtoolnix mkvtoolnix-gui
-
-## Install LaTex
-zypper install -y texlive texlive-xetex texlive-lang-arabic texlive-base texlive-extra-utils perl-Tk
+zypper install -y mkvtoolnix mkvtoolnix-gui
+# TODO handbrake
 
 ## Install inotify-tools and dunst
 zypper install -y inotify-tools dunst
@@ -144,5 +146,5 @@ tar -xf telegram.tar.xz -C /opt/
 ln -sf /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
 rm telegram.tar.r
 
-udo zypper in python3-nautilus
+zypper in python3-nautilus
 wget -qO- https://raw.githubusercozntent.com/harry-cpp/code-nautilus/master/install.sh | bash
