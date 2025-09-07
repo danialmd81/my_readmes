@@ -53,23 +53,24 @@ zinit light sindresorhus/pure
 #           atpull"%atclone" src"init.zsh"
 # zinit light starship/starship
 
-#### Oh My Zsh compatibility - load useful libraries
+#### load useful libraries
 zinit snippet OMZL::clipboard.zsh
 zinit snippet OMZL::completion.zsh
 zinit snippet OMZL::history.zsh
 zinit snippet OMZL::key-bindings.zsh
+
+#### Load plugins
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::colored-man-pages
 
-#### Load plugins (replaces plugins in Oh My Zsh)
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 #### fzf shell integration
 zinit ice from"gh-r" as"program"
 zinit light junegunn/fzf
+zinit light Aloxaf/fzf-tab
 
 ## Load fzf shell integration scripts
 #### Key bindings:

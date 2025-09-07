@@ -51,13 +51,13 @@ systemctl start mysql
 # mysql_secure_installation
 
 # TODO check
-## Install Docker
-# zypper install -y docker
-# systemctl enable docker
-# systemctl start docker
-# groupadd docker
-# usermod -aG docker $USER
-# newgrp docker
+Install Docker
+zypper install -y docker
+systemctl enable docker
+systemctl start docker
+groupadd docker
+usermod -aG docker $USER
+newgrp docker
 
 ## Configure Git
 git config --global user.name "Danial Mobini"
@@ -72,20 +72,9 @@ git config --global init.defaultBranch main
 zypper install -y R-base
 
 ## Install Go
-# TODO install latest
-# wget https://go.dev/dl/go1.24.5.linux-amd64.tar.gz
-# tar -C /usr/local -xzf go1.24.5.linux-amd64.tar.gz
-# rm go1.24.5.linux-amd64.tar.gz
-# echo "export PATH=\$PATH:/usr/local/go/bin" >>~/.profile
-# source ~/.profile
-
+zypper in go
 ## Install Zig
-# TODO install latest
-# wget https://ziglang.org/download/0.11.0/zig-linux-x86_64-0.11.0.tar.xz
-# tar -xf zig-linux-x86_64-0.11.0.tar.xz
-# mv zig-linux-x86_64-0.11.0 /opt/zig
-# ln -s /opt/zig/zig /usr/local/bin/zig
-# rm zig-linux-x86_64-0.11.0.tar.xz
+xzypper in zig
 
 ###### Install CTF tools
 # zypper install -y binwalk foremost steghide hashcat nmap sqlmap
@@ -134,6 +123,9 @@ zypper install -y inotify-tools dunst
 ###### Fixing the System Clock
 # timedatectl set-local-rtc 1 --adjust-system-clock
 # timedatectl
+
+###### Gnome extension
+zypper install typelib-1_0-GTop-2_0
 
 ## Install and set up Zsh as the default shell
 zypper install -y zsh
