@@ -46,6 +46,17 @@ setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
 
 ######################################################################################
+## Load a few important annexes, without Turbo
+######################################################################################
+# (this is currently required for annexes)
+zinit light-mode for \
+	zdharma-continuum/zinit-annex-as-monitor \
+	zdharma-continuum/zinit-annex-bin-gem-node \
+	zdharma-continuum/zinit-annex-patch-dl \
+	zdharma-continuum/zinit-annex-rust
+### End of Zinit's installer chunk
+
+######################################################################################
 #### READ ME
 ######################################################################################
 ## for updating plugins
@@ -92,7 +103,6 @@ zinit light sindresorhus/pure
 GENCOMPL_FPATH=$HOME/.zsh/completions
 source $HOME/.zsh/zsh-completion-generator.plugin.zsh
 source $HOME/.zsh/update-man-completion.zsh
-fpath+=("$HOME/.zsh/completions")
 
 ######################################################################################
 ## Load plugins and fzf completions
@@ -109,11 +119,17 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::colored-man-pages
-zinit snippet OMZP::docker
 
+# Other plugins
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zdharma-continuum/history-search-multi-word
 zinit light zsh-users/zsh-autosuggestions
+
+# LS_COLORS plugin
+zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
+	atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+	atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
+zinit light trapd00r/LS_COLORS
 
 # FZF and related plugins
 zinit light Aloxaf/fzf-tab
