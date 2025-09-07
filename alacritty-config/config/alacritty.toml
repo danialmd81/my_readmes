@@ -13,6 +13,7 @@
 # import = ["~/.config/alacritty/themes/themes/pencil_light.toml"]
 # import = ["~/.config/alacritty/themes/themes/smoooooth.toml"]
 # import = ["~/.config/alacritty/themes/themes/vscode.toml"]
+
 [env]
 
 [window]
@@ -30,6 +31,11 @@ history = 100000
 multiplier = 3
 
 [font]
+# normal = { family = "MartianMono Nerd Font", style = "Regular" }
+# normal = { family = "EnvyCodeR Nerd Font", style = "Regular" }
+# normal = { family = "FiraCode Nerd Font", style = "Regular" }
+# normal = { family = "CaskaydiaCove Nerd Font", style = "Regular" }
+# normal = { family = "IntoneMono Nerd Font", style = "Regular" }
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 size = 14
 offset = { x = 0, y = 0 }
@@ -51,26 +57,26 @@ thickness = 0.2
 
 [keyboard]
 bindings = [
-	{ key = "V", mods = "Control|Shift", action = "Paste" },
-	{ key = "C", mods = "Control|Shift", action = "Copy" },
-	{ key = "Q", mods = "Control|Shift", action = "Quit" },
-	{ key = "Enter", mods = "Control|Shift", action = "ToggleFullscreen" },
-	{ key = "K", mods = "Control|Shift", action = "ClearHistory" },
-	{ key = "PageUp", mods = "Shift", action = "ScrollPageUp" },
-	{ key = "PageDown", mods = "Shift", action = "ScrollPageDown" },
-	{ key = "Home", mods = "Shift", action = "ScrollToTop" },
-	{ key = "End", mods = "Shift", action = "ScrollToBottom" },
-	{ key = "Up", mods = "Control", action = "ScrollLineUp" },
-	{ key = "Down", mods = "Control", action = "ScrollLineDown" },
-	{ key = "+", mods = "Control", action = "IncreaseFontSize" },
-	{ key = "-", mods = "Control", action = "DecreaseFontSize" },
-	{ key = "\\", mods = "Control", action = "ResetFontSize" },
-	{ key = "T", mods = "Control|Shift", action = "SpawnNewInstance" },
-	{ key = "N", mods = "Control|Shift", action = "SearchHistoryNext" },
-	{ key = "P", mods = "Control|Shift", action = "SearchHistoryPrevious" },
-	{ key = "Enter", mods = "None", mode = "Search", action = "SearchConfirm" },
-	{ key = "Tab", mods = "None", mode = "Search", action = "SearchFocusNext" },
-	{ key = "Tab", mods = "Shift", mode = "Search", action = "SearchFocusPrevious" },
-	{ key = "Escape", mods = "None", mode = "Search", action = "SearchCancel" },
-	{ key = "C", mods = "Control", mode = "Search", action = "SearchClear" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "Q", mods = "Control|Shift", action = "Quit" },
+  { key = "Enter", mods = "Control|Shift", action = "ToggleFullscreen" },
+  { key = "K", mods = "Control|Shift", action = "ClearHistory" },
+  { key = "PageUp", mods = "Shift", action = "ScrollPageUp" },
+  { key = "PageDown", mods = "Shift", action = "ScrollPageDown" },
+  { key = "Home", mods = "Shift", action = "ScrollToTop" },
+  { key = "End", mods = "Shift", action = "ScrollToBottom" },
+  { key = "Up", mods = "Control", action = "ScrollLineUp" },
+  { key = "Down", mods = "Control", action = "ScrollLineDown" },
+  { key = "+", mods = "Control", action = "IncreaseFontSize" },
+  { key = "-", mods = "Control", action = "DecreaseFontSize" },
+  { key = "\\", mods = "Control", action = "ResetFontSize" },
+  { key = "T", mods = "Control|Shift", action = "SpawnNewInstance" },
+  { key = "N", mods = "Control|Shift", action = "SearchHistoryNext" },
+  { key = "P", mods = "Control|Shift", action = "SearchHistoryPrevious" },
+  { key = "Enter", mods = "None", mode = "Search", action = "SearchConfirm" },
+  { key = "Tab", mods = "None", mode = "Search", action = "SearchFocusNext" },
+  { key = "Tab", mods = "Shift", mode = "Search", action = "SearchFocusPrevious" },
+  { key = "Escape", mods = "None", mode = "Search", action = "SearchCancel" },
+  { key = "C", mods = "Control", mode = "Search", action = "SearchClear" },
 ]
