@@ -124,8 +124,8 @@ zinit update --parallel 40
 
 Turbo and lucid are the most used options.
 
-<details>
-  <summary><b>Turbo Mode</b></summary>
+#### Turbo Mode
+
 Turbo mode is the key to performance. It can be loaded asynchronously, which makes a huge difference when the amount of plugins increases.
 
 Usually used as `zinit ice wait"<SECONDS>"`, let's use the previous example:
@@ -141,10 +141,7 @@ zinit ice wait    # also be used in `light` and `snippet`
 zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
 ```
 
-</details>
-
-<details>
-  <summary><b>Lucid</b></summary>
+#### Lucid
 
 Turbo mode is verbose, so you need an option for quiet.
 
@@ -154,8 +151,6 @@ You can use with `lucid`:
 zinit ice wait lucid
 zinit load zdharma/history-search-multi-word
 ```
-
-</details>
 
 ***F&A:*** What is `ice`?
 
