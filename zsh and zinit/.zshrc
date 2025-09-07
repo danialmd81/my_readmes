@@ -1,8 +1,3 @@
-#### Enable Powerlevel10k instant prompt (keep this at the top)
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -48,7 +43,6 @@ setopt promptsubst         # enable command substitution in prompt
 ######################################################################################
 ## Load a few important annexes, without Turbo
 ######################################################################################
-# (this is currently required for annexes)
 zinit light-mode for \
 	zdharma-continuum/zinit-annex-as-monitor \
 	zdharma-continuum/zinit-annex-bin-gem-node \
@@ -67,42 +61,21 @@ zinit light-mode for \
 ## Theme
 ######################################################################################
 
-#### Load powerlevel10k config
-
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# #### Load a few important annexes, without Turbo
-# #### (this is currently required for annexes)
-# zinit light-mode for \
-# 	zdharma-continuum/zinit-annex-as-monitor \
-# 	zdharma-continuum/zinit-annex-bin-gem-node \
-# 	zdharma-continuum/zinit-annex-patch-dl \
-# 	zdharma-continuum/zinit-annex-rust
-# #### End of Zinit's installer chunk
-
 #### Load Powerlevel10k theme
-# zinit ice depth=1
-# zinit light romkatv/powerlevel10k
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
+#### Load powerlevel10k config
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#### Load pure theme
-zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
-zinit light sindresorhus/pure
+# #### Load pure theme
+# zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
+# zinit light sindresorhus/pure
 
-#### Load starship theme
+# #### Load starship theme
 # zinit ice as"command" from"gh-r" \
 #           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
 #           atpull"%atclone" src"init.zsh"
 # zinit light starship/starship
-
-######################################################################################
-## Load your custom plugins
-######################################################################################
-
-## Zsh completion generator
-#### run man-update to load completions
-GENCOMPL_FPATH=$HOME/.zsh/completions
-source $HOME/.zsh/zsh-completion-generator.plugin.zsh
-source $HOME/.zsh/update-man-completion.zsh
 
 ######################################################################################
 ## Load plugins and fzf completions
