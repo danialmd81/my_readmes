@@ -99,20 +99,17 @@ fpath+=("$HOME/.zsh/completions")
 ######################################################################################
 
 # Oh-My-Zsh libraries
-zinit ice wait lucid for \
-	snippet OMZL::git.zsh \
-	snippet OMZL::clipboard.zsh \
-	snippet OMZL::completion.zsh \
-	snippet OMZL::history.zsh \
-	snippet OMZL::key-bindings.zsh
+zinit snippet OMZL::clipboard.zsh
+zinit snippet OMZL::completion.zsh
+zinit snippet OMZL::history.zsh
+zinit snippet OMZL::key-bindings.zsh
 
 # Oh-My-Zsh plugins
-zinit ice wait lucid for \
-	snippet OMZP::git \
-	snippet OMZP::sudo \
-	snippet OMZP::command-not-found \
-	snippet OMZP::colored-man-pages \
-	snippet OMZP::docker
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::docker
 
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zdharma-continuum/history-search-multi-word
@@ -120,17 +117,36 @@ zinit light zsh-users/zsh-autosuggestions
 
 # FZF and related plugins
 zinit light Aloxaf/fzf-tab
-zinit ice from"gh-r" as"program"
+zinit ice as"program" from"gh-r"
 zinit ice has"fzf" id-as"junegunn/fzf_completions" pick"/dev/null" multisrc"shell/completion.zsh shell/key-bindings.zsh"
 zinit light junegunn/fzf
 
 zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
 	zsh-users/zsh-completions
 
-# # Load completions
-# autoload -Uz compinit && compinit
-
-# zinit cdreplay -q
+## FZF configuration
+if [[ -x "$(command -v fzf)" ]]; then
+	export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+	  --info=inline-right \
+	  --ansi \
+	  --layout=reverse \
+	  --border=rounded \
+	  --color=border:#27a1b9 \
+	  --color=fg:#c0caf5 \
+	  --color=gutter:#16161e \
+	  --color=header:#ff9e64 \
+	  --color=hl+:#2ac3de \
+	  --color=hl:#2ac3de \
+	  --color=info:#545c7e \
+	  --color=marker:#ff007c \
+	  --color=pointer:#ff007c \
+	  --color=prompt:#2ac3de \
+	  --color=query:#c0caf5:regular \
+	  --color=scrollbar:#27a1b9 \
+	  --color=separator:#ff9e64 \
+	  --color=spinner:#ff007c \
+	"
+fi
 
 #### fzf Key bindings:
 #### - Ctrl+T to paste selected files/directories onto the command line
