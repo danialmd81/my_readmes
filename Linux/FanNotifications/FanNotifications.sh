@@ -35,7 +35,8 @@ check_and_send_notification() {
 	current_label=$(get_mode_label $current_mode)
 
 	if [ "$current_mode" != "$previous_mode" ]; then
-		icon_path="$(dirname "$(readlink -f "$0")")/fan"
+		icon_path="$(dirname "$(readlink -f "$0")")/fan.jpg"
+		sound_path="/usr/share/sounds/freedesktop/stereo/complete.oga" # Change to your preferred sound
 
 		# Read the notification ID if it exists
 		if [ -f "$notification_id_file" ]; then
@@ -49,7 +50,16 @@ check_and_send_notification() {
 			dunstify -C "$notification_id"
 		fi
 		# Send the notification and save the new ID
-		dunstify -p -u normal -i "$icon_path" "Fan Boost Mode Changed" "New mode: $current_label" >"$notification_id_file"
+		dunstify -a "FanNotifications" -c fan -p -u normal -I "$icon_path" "Fan Boost Mode Changed" "New mode: $current_label" >"$notification_id_file"
+
+		# Play a sound
+		if command -v canberra-gtk-play >/dev/null; then
+			canberra-gtk-play --id="dialog-information" --description="Fan notification" &
+		elif command -v paplay >/dev/null; then
+			paplay "$sound_path" &
+		elif command -v aplay >/dev/null; then
+			aplay "$sound_path" &
+		fi
 
 		previous_mode="$current_mode"
 	fi
