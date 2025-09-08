@@ -4,20 +4,37 @@ This repository serves as a personal knowledge base where I gather various READM
 
 ## Repository Structure
 
-- **Docker** - Docker installation and configuration guides
-- **Git** - Git-related documentation including:
+- **alacritty**  
+  Alacritty terminal configuration and themes.
+- **docker**  
+  Docker installation, configuration, and usage guides.
+- **dual-boot**  
+  Guides for partitioning, systemd-boot, and dual-boot setups.
+- **git**  
+  Git-related documentation including:
   - Basic Git usage
   - Git LFS (Large File Storage)
   - Git Submodules
-- **LaTeX** - LaTeX installation guide and templates
-- **Pop!_OS** - Post-installation setup and configuration for Pop!_OS
-- **Pandoc** - Instructions for converting Markdown to RTL HTML
-- **Google C++ Style Guide** - Reference for C++ coding standards
-- **Nekobox** - Network routing configuration
+- **google-cpp-style-guide**  
+  Reference and notes on the Google C++ Style Guide.
+- **latex**  
+  LaTeX installation, templates, and usage notes.
+- **Linux**  
+  Various Linux tips and scripts (battery limiting, fan notifications, LaTeX installation, etc.).
+- **nekobox**  
+  Network routing configuration for Nekoray/Nekobox.
+- **pandoc_markdown_to_rtl_html**  
+  Instructions and CSS for converting Markdown to RTL HTML with Pandoc.
+- **powerbank**  
+  Recommendations for power banks and chargers.
+- **set-boot-splash**  
+  Guide to customizing the Linux boot splash screen.
+- **Cosmic Desktop Envirment Pop!_OS 22.04.md**  
+  Post-installation setup and configuration for Pop!_OS with Cosmic Desktop.
 
 ## TODO
 
-[] add a Zinit readme
+- [ ]
 
 ## Usage
 
@@ -29,4 +46,4 @@ This is a personal collection of README files and documentation. Feel free to us
 
 ## License
 
-Feel free to use and adapt these guides for your own purposes.
+Feel free to use and adapt these guides for your
