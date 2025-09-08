@@ -47,7 +47,7 @@ geosite:ads
 
 !> **Important**: By changing the default `geosite.db`, you can't use default geosite categories like `category-ads-all`. You can switch back to default geosite by removing the new `geosite.db` and renaming `backup-geosite.db` back to `geosite.db`. You can also download the original `geosite.db` from [sing-geosite](https://github.com/SagerNet/sing-geosite/releases).
 
-![nekoray-sing-box.png](/images/nekoray-sing-box.png)
+![nekoray-sing-box.png](nekoray-sing-box.png)
 
 ### Xray core
 
@@ -85,7 +85,7 @@ geosite:category-ads-all
 
 6. Press OK button and restart the app.
 
-![nekoray-xray](/images/nekoray-xray.png)
+![nekoray-xray](nekoray-xray.png)
 
 ## Routing Using default geosite.db
 
