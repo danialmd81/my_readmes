@@ -127,7 +127,7 @@ glib-compile-schemas ~/.local/share/glib-2.0/schemas/
 
 ### via dconf-editor
 
-![dconf-editor](../../_image/dconf.png)
+![dconf-editor](../../../images/dconf.png)
 
 ### via command-line
 
