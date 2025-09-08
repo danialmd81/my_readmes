@@ -2,11 +2,6 @@
 
 is an extension for nautilus, which adds an context-entry for opening other terminal emulators than `gnome-terminal`.
 
-## Supported file managers
-
-- Nautilus
-- Caja
-
 ## Supported Terminal Emulators
 
 The following terminal emulators are fully supported. PRs for other terminals
@@ -102,11 +97,10 @@ sudo make install schema # System install
 ```
 
 `install` installs this extension to extension directories of all supported file
-managers. To avoid this, use `install-nautilus` or `install-caja` instead.
+managers. To avoid this, use `install-nautilus` instead.
 
 ```sh
 make install-nautilus schema # Install nautilus only
-make install-caja schema # Install caja only
 ```
 
 ### restart nautilus
@@ -133,7 +127,7 @@ glib-compile-schemas ~/.local/share/glib-2.0/schemas/
 
 ### via dconf-editor
 
-![dconf-editor](_image/dconf.png)
+![dconf-editor](../../_image/dconf.png)
 
 ### via command-line
 
